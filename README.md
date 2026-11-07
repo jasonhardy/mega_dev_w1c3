@@ -8,4 +8,4 @@ This repository contains the support desk knowledge base export for ticket #4471
 - [Parser issue](https://github.com/jasonhardy/mega_dev_w1c3/issues/1)
 - [Form hint issue](https://github.com/jasonhardy/mega_dev_w1c3/issues/2)
 
-The report counts are based on the 2026-10-04 export. The source page computes them from unique report IDs at render time. The HTML file is a standalone snapshot of that page for review.
+The report counts are based on the 2026-10-04 export. The source page computes them from unique report IDs at render time. The page also records the course desk's 2026-10-05 engineering update. The HTML file is a standalone snapshot of that page for review.

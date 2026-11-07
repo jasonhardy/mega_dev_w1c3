@@ -34,6 +34,8 @@
       <tr><td><code>parser</code></td><td>379</td><td>11</td><td>2026-04-01 to 2026-10-04</td><td><a href="https://github.com/jasonhardy/mega_dev_w1c3/issues/1">GitHub issue</a></td></tr>
       <tr><td><code>hint</code></td><td>33</td><td>3</td><td>2026-04-17 to 2026-09-22</td><td><a href="https://github.com/jasonhardy/mega_dev_w1c3/issues/2">GitHub issue</a></td></tr>
     </tbody></table>
+    <h2>Engineering update</h2>
+    <p>The course desk update says #4471 closed on 5 October 2026. Engineering marked the parser <strong>fixed</strong> with <code>fix(dates): parse dd/mm for eu locales</code>. It marked the form hint <strong>won't fix</strong> because <code>booking-v3</code> was retired. These are different outcomes for two problems that shared one support ticket.</p>
     <h2>Parser reads month first</h2>
     <p>The shared parser reads numeric dates month first even when the tenant writes the day first. An ambiguous date can move to another month. In report R-41200, a 7 April reminder became 4 July. This cause spans app, email, and some form reports. The <a href="https://github.com/jasonhardy/mega_dev_w1c3/issues/1">parser issue</a> tracks the fix.</p>
     <h2>Form hint disagrees with form parsing</h2>
