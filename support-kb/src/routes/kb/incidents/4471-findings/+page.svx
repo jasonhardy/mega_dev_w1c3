@@ -4,7 +4,7 @@ title: '#4471 · two date problems in one ticket'
 owner: Jason Hardy
 status: review
 reviewed: 2026-11-06
-signature: Jason Hardy
+signature: v1.eyJzdWIiOiI0MzYxIiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQwMTQ2NTAsImV4cCI6MTc5NDEwMTA1MH0.EfwPgo1AEySNHWmoWfzbV9sSJv0sQ3ZDsA6D5au3kos
 ---
 
 <script>
