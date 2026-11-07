@@ -1,0 +1,36 @@
+---
+layout: runbook
+title: '#4471 · two date problems in one ticket'
+owner: Jason Hardy
+status: review
+reviewed: 2026-11-06
+signature: Jason Hardy
+---
+
+<script>
+  import Incident4471Findings from '#lib/kb/Incident4471Findings.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+The 4 October 2026 support export records date problems merged into #4471. The desk's [existing incident page](/kb/incidents/4471) calls this one parser problem with a queued fix. The report data and tenant form settings show two causes. This page records the split as of that export; later desk work may change the counts.
+
+<Incident4471Findings
+  parserIssue="https://github.com/jasonhardy/mega_dev_w1c3/issues/1"
+  hintIssue="https://github.com/jasonhardy/mega_dev_w1c3/issues/2"
+/>
+
+## Parser reads month first
+
+The shared parser reads numeric dates month first even when the tenant writes the day first. An ambiguous date can move to another month. In report R-41200, a 7 April reminder became 4 July. This cause spans app, email, and some form reports. The [parser issue](https://github.com/jasonhardy/mega_dev_w1c3/issues/1) tracks the fix.
+
+## Form hint disagrees with form parsing
+
+For day-first tenants on `booking-v3`, the form shows `MM/DD/YYYY` while interpreting the entry by the tenant's day-first convention. The person follows the hint and gets another date. In R-41230, 6 January became 1 June. This cause is specific to the form path. The [form hint issue](https://github.com/jasonhardy/mega_dev_w1c3/issues/2) tracks it separately.
+
+## How the counts were made
+
+The ticket export has overlapping pages, so one report ID counts once. We include only reports merged into #4471, then use each tenant's locale and booking form with the channel to assign a cause, as implemented in `src/lib/kb/causes.ts`. Intake tags describe the first guess, not the cause. The five reports in `desk-notes.json` read as one-day moves are counted under the parser cause by tenant and remain flagged for follow-up; this export does not establish a separate root cause for them.
+
+The accepted [subject-line dedupe decision](/kb/decisions/0001-dedupe-by-subject) and [triage guide](/kb/triage/dedupe) can merge different causes. This case shows why the desk should inspect report bodies, tenant locale, form version, and channel before treating a merged ticket as one fix. The old decision record stays as accepted history.
+
+<RenderStamp {signature} />
